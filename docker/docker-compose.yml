@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+
+    php:
+        container_name: ${APP_NAME}-php
+        build: php
+        user: www-data
+        working_dir: ${SYMFONY_DOCKER_PATH}
+        volumes:
+            - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
+            - ${LOGS_DIR}/symfony:${SYMFONY_DOCKER_PATH}${SYMFONY_DOCKER_PATH_LOG}
+        env_file:
+          - ${ENV_FILE_DIR}
+
+    nginx:
+        container_name: ${APP_NAME}-nginx
+        build: nginx
+        ports:
+            - ${NGINX_PORT_EXPOSE}:${NGINX_PORT}
+        links:
+            - php
+        volumes:
+            - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
+            - ${LOGS_DIR}/nginx/:${NGINX_DOCKER_PATH_LOG}
+        env_file:
+          - ${ENV_FILE_DIR}
+
+    node:
+        container_name: ${APP_NAME}-node
+        build: node
+        user: node
+        working_dir: ${SYMFONY_DOCKER_PATH}
+        volumes:
+            - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
+        env_file:
+          - ${ENV_FILE_DIR}
+
+    redis:
+        container_name: ${APP_NAME}-redis
+        image: redis:4-alpine
+        ports:
+            - ${REDIS_PORT_EXPOSE}:${REDIS_PORT}
