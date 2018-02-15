@@ -13,7 +13,7 @@
 
 **About this stack:**
 
-* **[nginx:1.13-alpine]** :  Use ```http://localhost/``` to access the website or use ```http://terraqueus.dev``` with this configuration : ```sudo sh -c "echo '127.0.0.1   symfony.dev' >> /etc/hosts"```
+* **[nginx:1.13-alpine]** :  Use ```http://localhost/``` to access the website or use ```http://terraqueus.dev``` with this configuration : ```sudo sh -c "echo '127.0.0.1   terraqueus.dev' >> /etc/hosts"```
 * **[php:7.2-fpm-alpine]** 
 * **[redis:4-alpine]** Check "About : Redis" section.
 * **[node:9-alpine]** Check "About : Symfony 4 - Encore" section.
@@ -52,7 +52,7 @@
 Check configuration using : ```docker-compose -f docker/docker-compose.yml exec redis redis-cli ping```.
 It should display ```PONG```!
 
-##### About : [Symfony 4 - Encore ](https://symfony.com/doc/current/frontend.html)
+##### About : [Symfony 4 - Encore](https://symfony.com/doc/current/frontend.html)
 
 | **usage**      | **env**        | **commands**                                                                                  | **On start** |
 |----------------|----------------|-----------------------------------------------------------------------------------------------|--------------|
