@@ -9,7 +9,6 @@ services:
         working_dir: ${SYMFONY_DOCKER_PATH}
         volumes:
             - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
-            - ${LOGS_DIR}/symfony:${SYMFONY_DOCKER_PATH}${SYMFONY_DOCKER_PATH_LOG}
         env_file:
           - ${ENV_FILE_DIR}
 
@@ -22,7 +21,6 @@ services:
             - php
         volumes:
             - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
-            - ${LOGS_DIR}/nginx/:${NGINX_DOCKER_PATH_LOG}
         env_file:
           - ${ENV_FILE_DIR}
 
@@ -35,6 +33,7 @@ services:
             - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
         env_file:
           - ${ENV_FILE_DIR}
+        command: sh -c "npm install && npm start"
 
     redis:
         container_name: ${APP_NAME}-redis

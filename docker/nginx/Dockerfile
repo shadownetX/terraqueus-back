@@ -1,7 +1,5 @@
 FROM nginx:1.13-alpine
 
-MAINTAINER Thomas THIEBAUDET <thomas@thiebaudet.fr>
-
 RUN apk --no-cache add shadow
 
 RUN rm -f /etc/nginx/nginx.conf /etc/nginx/conf.d/*

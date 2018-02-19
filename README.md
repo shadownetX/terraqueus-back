@@ -24,7 +24,7 @@ See additional projects:
 
 ### Manipulate containers
 
-| **For short** | **Makefile command**        | **Docker command**                  | **Purpose**                          |
+| **For short** | **Makefile command**        | **Custom command**                  | **Purpose**                          |
 |---------------|-----------------------------|-------------------------------------|---------------------------------------|
 | BUILD         | **```make build```**        | ```bin/docker build```              | Build the app                         |
 | RUN           | **```make run```**          | ```bin/docker run```                | Run the app                           |
