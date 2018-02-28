@@ -11,7 +11,6 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation;
-use Twig\Environment;
 
 /**
  * Class AdminController
@@ -22,7 +21,7 @@ class AdminController
     /**
      * @Annotation\Route("/dashboard", name="admin_dashboard")
      *
-     * @param Environment $twig
+     * @param \Twig_Environment $twig
      *
      * @return Response
      *
@@ -30,7 +29,7 @@ class AdminController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function dashboard(Environment $twig) : Response
+    public function dashboard(\Twig_Environment $twig) : Response
     {
         return new Response($twig->render("dashboard/index.html.twig"));
     }
