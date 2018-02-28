@@ -15,6 +15,7 @@ use Twig\Environment;
 
 /**
  * Class AdminController
+ * @Annotation\Route("/admin")
  */
 class AdminController
 {
@@ -29,7 +30,7 @@ class AdminController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function dashboard(Environment $twig)
+    public function dashboard(Environment $twig) : Response
     {
         return new Response($twig->render("dashboard/index.html.twig"));
     }
