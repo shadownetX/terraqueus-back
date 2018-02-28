@@ -1,10 +1,33 @@
 FROM composer:latest as composer
 FROM php:7.2-fpm-alpine
 
-RUN apk --no-cache add \
-    unzip \
-    shadow \
-    tzdata
+RUN apk add --no-cache --virtual persistent-deps \
+        icu-libs \
+        zlib \
+        shadow \
+        tzdata
+
+RUN apk add --no-cache --virtual \
+        build-deps \
+        $PHPIZE_DEPS \
+        icu-dev \
+        zlib-dev
+
+RUN docker-php-ext-install \
+        opcache \
+        intl \
+        zip
+
+RUN pecl install \
+        apcu \
+        xdebug
+
+RUN docker-php-ext-enable \
+        opcache \
+        apcu \
+        xdebug
+
+RUN apk del build-deps
 
 # Add access
 RUN usermod -u 1000 www-data
