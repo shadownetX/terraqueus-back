@@ -1,8 +1,9 @@
 ## TERRAQUEUS - BACKEND
 
 See additional projects:
+* [Terraqueus - DOC](https://github.com/shadownetX/terraqueus)
 * [Terraqueus - API](https://github.com/shadownetX/terraqueus-api)
-* [Tarrequeus - FRONTEND](https://github.com/shadownetX/terraqueus-front)
+* [Terraqueus - FRONTEND](https://github.com/shadownetX/terraqueus-front)
 
 ---
 
@@ -21,8 +22,8 @@ See additional projects:
 
 * **[nginx:1.13-alpine]** :  Use ```http://localhost/``` to access the website or use ```http://terraqueus.dev``` with this configuration : ```sudo sh -c "echo '127.0.0.1   terraqueus.dev' >> /etc/hosts"```
 * **[php:7.2-fpm-alpine]** 
-* **[redis:4-alpine]** Check "About : Redis" section.
-* **[node:9-alpine]** Check "About : Symfony 4 - Encore" section.
+* **[redis:4-alpine]** Check "About: Redis" section.
+* **[node:9-alpine]** Check "About: Symfony 4 - Encore" section.
 
 ### Manipulate containers
 
@@ -38,7 +39,7 @@ See additional projects:
 
 ### Access to containers
 
-| **For short** | **Docker command**                    | **Purpose**                                            |
+| **For short** | **Custom command**                    | **Purpose**                                            |
 |---------------|---------------------------------------|--------------------------------------------------------|
 | EXEC-PHP      | ```bin/docker exec-php [ARGS]```      | Execute a command inside the php container             |
 | EXEC-ROOT     | ```bin/docker exec-php-root [ARGS]``` | Execute a command as ROOT inside the php container     |
@@ -49,19 +50,19 @@ See additional projects:
 
 ### Informations about containers
 
-| **For short** | **Docker command**                           | **Purpose**                           |
+| **For short** | **Custom command**                           | **Purpose**                           |
 |---------------|----------------------------------------------|---------------------------------------|
 | PS            | ```bin/docker ps```                          | List all running containers           |
 
-##### About : [Redis](https://redis.io/)
+##### About: [Redis](https://redis.io/)
 
 Check configuration using : ```docker-compose -f docker/docker-compose.yml exec redis redis-cli ping```.
 It should display ```PONG```!
 
-##### About : [Symfony 4 - Encore](https://symfony.com/doc/current/frontend.html)
+##### About: [Symfony 4 - Encore](https://symfony.com/doc/current/frontend.html)
 
 | **usage**      | **env**        | **commands**                                                                                  | **On start** |
-|----------------|----------------|-----------------------------------------------------------------------------------------------|--------------|
+|----------------|----------------|-----------------------------------------------------------------------------------------------|:------------:|
 | webpack-encore | dev            | ```bin/docker exec-node node_modules/.bin/encore dev```                                       | n            |
 | webpack-encore | continuous dev | ```bin/docker exec-node node_modules/.bin/encore dev --watch --watch-aggregate-timeout 100``` | **Y**        |
 | webpack-encore | prod           | ```bin/docker exec-node node_modules/.bin/encore production```                                | n            |
