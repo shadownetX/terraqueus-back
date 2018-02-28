@@ -4,6 +4,8 @@ See additional projects:
 * [Terraqueus - API](https://github.com/shadownetX/terraqueus-api)
 * [Tarrequeus - FRONTEND](https://github.com/shadownetX/terraqueus-front)
 
+---
+
 **Requirements:**
 
 * Docker: https://www.docker.com/get-docker
