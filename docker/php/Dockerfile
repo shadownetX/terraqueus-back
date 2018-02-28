@@ -16,9 +16,6 @@ RUN chown -R www-data:www-data \
         /var/www/.composer/cache/repo/https---symfony.sh/ \
         /var/www/.composer/cache/files/
 
-# COPY CUSTOM PHP.INI
-COPY php.ini /usr/local/etc/php
-
 # Add access
 RUN usermod -u 1000 www-data
 

@@ -3,7 +3,6 @@
 
 # Docker Temp
 .env
-/docker/logs/
 
 /vendor/
 /var/

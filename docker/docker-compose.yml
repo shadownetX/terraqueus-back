@@ -9,6 +9,7 @@ services:
         working_dir: ${SYMFONY_DOCKER_PATH}
         volumes:
             - ${SYMFONY_APP_PATH}:${SYMFONY_DOCKER_PATH}
+            - ./php/php.ini:/usr/local/etc/php/php.ini
         env_file:
           - ${ENV_FILE_DIR}
 
