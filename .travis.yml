@@ -12,4 +12,4 @@ before_script:
 script:
 - composer install
 - npm install
-- npm start
+- npm build
