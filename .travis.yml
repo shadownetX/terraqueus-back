@@ -1,0 +1,13 @@
+language: php
+
+services:
+  - docker
+
+before_script:
+- docker pull vonp/back-terraqueus-php
+- docker pull vonp/back-terraqueus-node
+
+script:
+- composer install
+- npm install
+- npm start
