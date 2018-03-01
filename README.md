@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shadownetX/terraqueus-back.svg?branch=master)](https://travis-ci.org/shadownetX/terraqueus-back)
+
 ## TERRAQUEUS - BACKEND
 
 See additional projects:
